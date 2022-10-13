@@ -14,9 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Install package
-      run: |
-        sudo apt-get -y install automake
+    - name: autogen
+      run: ./autogen.sh
 
     - name: configure
       run: ./configure
