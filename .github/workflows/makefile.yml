@@ -39,7 +39,7 @@ jobs:
     - name: Install automake
       run: |
         brew update
-        brew install automake gnu-sed
+        brew install automake gnu-sed openssl
 
     - name: autogen
       run: ./autogen.sh
