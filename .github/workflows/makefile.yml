@@ -36,6 +36,11 @@ jobs:
     - name: Check out repository code
       uses: actions/checkout@v3
 
+    - name: Install automake
+      run: |
+        brew update
+        brew install automake gnu-sed
+
     - name: autogen
       run: ./autogen.sh
 
