@@ -9,7 +9,9 @@ on:
 jobs:
   build-on-ubuntu:
 
-    runs-on: ubuntu-latest
+    runs-on: 
+    - ubuntu-22.04
+    - ubuntu-20.04
 
     steps:
     - uses: actions/checkout@v3
@@ -29,29 +31,29 @@ jobs:
 #    - name: Run distcheck
 #      run: make distcheck
 
-  build-on-mac:
+#  build-on-mac:
   
-    runs-on: macos-latest
-    steps:
-    - name: Check out repository code
-      uses: actions/checkout@v3
+#    runs-on: macos-latest
+#    steps:
+#    - name: Check out repository code
+#      uses: actions/checkout@v3
 
-    - name: Install automake
-      run: |
-        brew update
-        brew install automake gnu-sed openssl
+#    - name: Install automake
+#      run: |
+#        brew update
+#        brew install automake gnu-sed openssl
 
-    - name: autogen
-      run: ./autogen.sh
+#    - name: autogen
+#      run: ./autogen.sh
 
-    - name: configure
-      run: ./configure
+#    - name: configure
+#      run: ./configure
       
-    - name: Install dependencies
-      run: make
+#    - name: Install dependencies
+#      run: make
       
-    - name: Run check
-      run: make check
+#    - name: Run check
+#      run: make check
       
 #    - name: Run distcheck
 #      run: make distcheck
