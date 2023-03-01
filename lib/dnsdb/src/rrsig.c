@@ -1,6 +1,6 @@
 /*------------------------------------------------------------------------------
  *
- * Copyright (c) 2011-2022, EURid vzw. All rights reserved.
+ * Copyright (c) 2011-2023, EURid vzw. All rights reserved.
  * The YADIFA TM software product is provided under the BSD 3-clause license:
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,8 +48,6 @@
 #include <stdlib.h>
 
 #include <arpa/inet.h>
-#include <openssl/sha.h>
-#include <openssl/engine.h>
 
 #include <dnscore/sys_types.h>
 #include <dnscore/logger.h>
@@ -69,7 +67,6 @@
 #include "dnsdb/zdb-packed-ttlrdata.h"
 
 #include "dnsdb/nsec.h"
-
 
 #define MODULE_MSG_HANDLE g_dnssec_logger
 

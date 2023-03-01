@@ -1,6 +1,6 @@
 /*------------------------------------------------------------------------------
  *
- * Copyright (c) 2011-2022, EURid vzw. All rights reserved.
+ * Copyright (c) 2011-2023, EURid vzw. All rights reserved.
  * The YADIFA TM software product is provided under the BSD 3-clause license:
  *
  * Redistribution and use in source and binary forms, with or without
@@ -238,7 +238,7 @@ ixfr_process(message_data *mesg, int sockfd)
 #if DNSCORE_HAS_TSIG_SUPPORT
     if(message_has_tsig(mesg))
     {
-        message_sign_answer(mesg, message_tsig_get_key(mesg));
+        message_sign_answer(mesg);
     }
 #endif
 

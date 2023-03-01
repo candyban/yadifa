@@ -1,6 +1,6 @@
 /*------------------------------------------------------------------------------
  *
- * Copyright (c) 2011-2022, EURid vzw. All rights reserved.
+ * Copyright (c) 2011-2023, EURid vzw. All rights reserved.
  * The YADIFA TM software product is provided under the BSD 3-clause license:
  *
  * Redistribution and use in source and binary forms, with or without
@@ -396,7 +396,11 @@ dnskey_eddsa_equals(const dnssec_key *key_a, const dnssec_key *key_b)
     {
         if(strcmp(key_a->origin, key_b->origin) == 0)
         {
+#if SSL_API_GE_300
+            return EVP_PKEY_eq(key_a->key.ed, key_b->key.ed) == 1;
+#else
             return EVP_PKEY_cmp(key_a->key.ed, key_b->key.ed) == 1;
+#endif
         }
     }
 

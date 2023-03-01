@@ -1,6 +1,6 @@
 /*------------------------------------------------------------------------------
  *
- * Copyright (c) 2011-2022, EURid vzw. All rights reserved.
+ * Copyright (c) 2011-2023, EURid vzw. All rights reserved.
  * The YADIFA TM software product is provided under the BSD 3-clause license:
  *
  * Redistribution and use in source and binary forms, with or without
@@ -1149,13 +1149,11 @@ ya_result message_sign_query_by_name(message_data *mesg, const u8 *tsig_name);
 
 ya_result message_sign_query_by_name_with_epoch_and_fudge(message_data *mesg, const u8 *tsig_name, s64 epoch, u16 fudge);
 
-ya_result message_sign_answer_by_name(message_data *mesg, const u8 *tsig_name);
-
 ya_result message_sign_query(message_data *mesg, const tsig_item *key);
 
 ya_result message_sign_query_with_epoch_and_fudge(message_data *mesg, const tsig_item *key, s64 epoch, u16 fudge);
 
-ya_result message_sign_answer(message_data *mesg, const tsig_item *key);
+ya_result message_sign_answer(message_data *mesg);
 
 #endif
 

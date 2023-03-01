@@ -1,6 +1,6 @@
 /*------------------------------------------------------------------------------
  *
- * Copyright (c) 2011-2022, EURid vzw. All rights reserved.
+ * Copyright (c) 2011-2023, EURid vzw. All rights reserved.
  * The YADIFA TM software product is provided under the BSD 3-clause license:
  *
  * Redistribution and use in source and binary forms, with or without
@@ -1236,7 +1236,7 @@ tsig_sign_answer(message_data *mesg)
     else
     {
         log_err("tsig_digest_answer() called on a message without TSIG");
-        return INVALID_STATE_ERROR;
+        return TSIG_BADKEY;
     }
 }
 
